@@ -1,6 +1,8 @@
 # compromised-packagelock-scanner
 
-Small python script with no dependencies to search `package-lock.json` files on disk and scan comprised NPM packages from there.
+For MacOS.
+
+Small python script with no dependencies to search `package-lock.json` (using `mdfind`) files on disk and scan comprised NPM packages from there.
 
 Requires Python 3.6+.
 
