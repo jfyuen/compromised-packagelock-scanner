@@ -1045,9 +1045,9 @@ def check_packages_in_lockfile(packages: list, file_path: str):
         return
     for name, versions in packages:
         for version in versions:
-            key = f"node_modules/{name}"
-            package = all_packages.get(key)
-            if package:
+            for key, package in all_packages.items():
+                if not key.endswith(f"node_modules/{name}"):
+                    continue
                 locked_version = package.get('version')
                 if locked_version == version:
                     logging.info(f"!!! found {name}@{version} !!! in {file_path}")
